@@ -1,0 +1,71 @@
+user_story_map:
+  activities:
+    - title: アカウント管理
+      narrative_flows:
+        - task: 新規ユーザー登録を行う
+          user_stories: []
+        - task: ログインする
+          user_stories: []
+        - task: ログアウトする
+          user_stories: []
+        - task: ユーザー情報を閲覧する
+          user_stories: []
+        - task: ユーザー情報を編集する
+          user_stories: []
+        - task: アカウントを削除する
+          user_stories: []
+    - title: チーム運営
+      narrative_flows:
+        - task: 新規チームを作成する
+          user_stories: []
+        - task: チーム情報を編集する
+          user_stories: []
+        - task: チームを解散する
+          user_stories: []
+        - task: チームにメンバーを招待・追加する
+          user_stories: []
+        - task: チームからメンバーを削除する
+          user_stories: []
+        - task: チームのオーナー権限を移譲する
+          user_stories: []
+    - title: 他チームを知る
+      narrative_flows:
+        - task: 他チームを検索する
+          user_stories: []
+        - task: 他チームの情報を閲覧する
+          user_stories: []
+        - task: スクリムの募集を確認する
+          user_stories: []
+    - title: スクリムの募集
+      narrative_flows:
+        - task: 自チームのスクリムのスケジュールを確認する
+          user_stories: []
+        - task: スクリムを募集する
+          user_stories: []
+        - task: 自チームへのスクリム応募を確認する
+          user_stories: []
+        - task: 他チームから来たスクリム応募に回答する
+          user_stories: []
+    - title: スクリムの応募
+      narrative_flows:
+        - task: 募集中のスクリムを検索する
+          user_stories: []
+        - task: 他チームのスクリムの募集に応募する
+          user_stories: []
+        - task: 応募を取り下げる
+          user_stories: []
+    - title: 成立済みスクリム管理
+      narrative_flows:
+        - task: 自チームのスクリムのスケジュールを確認する
+          user_stories: []
+        - task: 自チームのスクリムのメンバーを確認する
+          user_stories: []
+        - task: 成立したスクリムについてキャンセル申請する
+          user_stories: []
+        - task: 成立したスクリムのキャンセル申請に回答する
+          user_stories: []
+    # 以下は、将来的な構想であり、考慮しない。
+    - title: 代打募集
+      narrative_flows: []
+    - title: 代打応募
+      narrative_flows: []
