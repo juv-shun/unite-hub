@@ -5,9 +5,13 @@ user_story_map:
         - task: 新規ユーザー登録を行う
           user_stories: []
         - task: ログインする
-          user_stories: []
+          user_stories:
+            - id: US001
+              title: Discordアカウントでログインできる。
         - task: ログアウトする
-          user_stories: []
+          user_stories:
+            - id: US002
+              title: ログアウトできる。
         - task: ユーザー情報を閲覧する
           user_stories: []
         - task: ユーザー情報を編集する
