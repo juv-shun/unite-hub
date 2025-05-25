@@ -1,4 +1,4 @@
-prd:
+product:
   service: UniteHub
   version: "1.0"
   description: UniteHubは、ポケモンユナイトの競技チームがスクリム(練習試合)を組むためのプラットフォーム。
