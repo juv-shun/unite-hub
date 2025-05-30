@@ -4,7 +4,7 @@ trigger: always_on
 
 ## 技術スタック
 
-- Next.jsとSupabaseの組み合わせで実現する。
+- Next.js と Supabase の組み合わせで実現する。
 - DB: PostgreSQL (Supabase)
 - 認証: Supabase Auth
 - CSS: Tailwind CSS
@@ -12,3 +12,7 @@ trigger: always_on
 ### Next.js
 
 特に指定がない限りは、CSR (Client Side Rendering)で実装する。
+
+## 実装時のルール
+
+ある機能を実装する際は、docs/core.yaml、および docs/user_story_map.yaml を必ず参照し、プロダクトの全体像を想定した上で設計すること

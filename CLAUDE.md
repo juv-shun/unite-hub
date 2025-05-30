@@ -1,21 +1,62 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このファイルは、Claude Code (claude.ai/code) がこのリポジトリでコードを操作する際のガイダンスを提供します。
 
-## Project Status
+## プロジェクト概要
 
-This is a newly initialized repository for the "unite-hub" project. The codebase structure and development commands will be documented here as the project evolves.
+UniteHubは、ポケモンユナイトの競技チームがスクリム（練習試合）を組むためのプラットフォームです。現在チームがTwitter/Xでスクリム募集を行っており、練習スケジュールの追跡と整理が困難である課題を解決します。
 
-## Repository Structure
+## アーキテクチャ
 
-Currently, this is an empty repository with only git initialization. The project architecture and file structure will be documented here once development begins.
+- **フロントエンド**: `frontend/` にある Next.js 15、TypeScript、React 19、Tailwind CSS
+- **バックエンド**: `supabase/` にローカル開発設定があるSupabase
+- **ドキュメント**: `docs/core.yaml` の製品仕様と `docs/user_story_map.yaml` のユーザーストーリーマップ
 
-## Development Commands
+アプリケーションは認証とデータベース管理にSupabase SSRを使用し、Discord OAuth連携を予定しています。
 
-Development commands will be added here once the project stack and build tools are established.
+## 開発コマンド
 
-## Notes
+### フロントエンド開発（`frontend/` ディレクトリで実行）
+```bash
+# 開発サーバーを起動（http://localhost:3000）
+npm run dev
 
-- This file should be updated as the project structure and development workflow are established
-- Add build, test, and lint commands when they become available
-- Document the high-level architecture once components are implemented
+# 本番用ビルド
+npm run build
+
+# 本番サーバー起動
+npm start
+
+# リンター実行
+npm run lint
+```
+
+### Supabaseローカル開発
+```bash
+# ローカルSupabaseインスタンス起動
+supabase start
+
+# Supabase Studio: http://127.0.0.1:54323
+# API: http://127.0.0.1:54321
+# データベースポート: 54322
+```
+
+## 主要機能
+
+ユーザーストーリーマップに基づく機能：
+- Discord認証
+- チーム管理（作成、メンバー管理、オーナー権限移譲）
+- スクリムスケジューリングと募集
+- マッチング申請と承認システム
+- 確定済みスクリムのスケジュール管理
+
+## 開発ガイドライン
+
+### 技術スタックルール
+- **データベース**: Supabase経由のPostgreSQL
+- **認証**: Supabase Auth
+- **CSSフレームワーク**: Tailwind CSS
+- **レンダリング**: 特に指定がない限りCSR（Client Side Rendering）
+
+### 実装要件
+機能を実装する際は、必ず `docs/core.yaml` と `docs/user_story_map.yaml` を参照し、プロダクト全体像を理解した上で設計すること。
