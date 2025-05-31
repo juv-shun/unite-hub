@@ -3,6 +3,7 @@
 import { useAuth } from '@/lib/auth';
 import { LoginButton } from '@/components/auth/LoginButton';
 import { UserProfile } from '@/components/auth/UserProfile';
+import Image from 'next/image';
 
 export default function Home() {
   const { user, loading } = useAuth();
@@ -20,7 +21,7 @@ export default function Home() {
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl font-bold text-gray-900">UniteHub</h1>
+            <Image src="/unitehub-logo.png" alt="UniteHub" width={200} height={50} />
             {user && <UserProfile />}
           </div>
         </div>
