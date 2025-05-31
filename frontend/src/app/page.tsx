@@ -43,23 +43,6 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               ようこそ、{user.user_metadata.full_name}さん！
             </h2>
-            <p className="text-gray-600 mb-8">
-              UniteHubでスクリムの管理を始めましょう。
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white p-6 rounded-lg shadow-sm border">
-                <h3 className="text-lg font-semibold mb-2">チーム管理</h3>
-                <p className="text-gray-600">チームの作成・編集・メンバー管理</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm border">
-                <h3 className="text-lg font-semibold mb-2">スクリム募集</h3>
-                <p className="text-gray-600">練習試合の募集・応募</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm border">
-                <h3 className="text-lg font-semibold mb-2">スケジュール管理</h3>
-                <p className="text-gray-600">確定済みスクリムの管理</p>
-              </div>
-            </div>
           </div>
         )}
       </main>
