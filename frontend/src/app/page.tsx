@@ -73,7 +73,7 @@ export default function Home() {
                 ようこそ、{user.user_metadata.full_name || user.email}さん！
               </h1>
               <p className="text-xl text-gray-600">
-                ダッシュボードで今日のスクリムを確認しましょう。
+                今週のスクリムの予定を確認しましょう。
               </p>
               {/* Add more content for logged-in users here */}
             </div>
