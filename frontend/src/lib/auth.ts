@@ -1,7 +1,8 @@
 'use client';
 
 import { createClient } from '@/lib/supabaseClient';
-import { User } from '@supabase/supabase-js';
+import { useRouter } from 'next/navigation';
+import { User, AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
 
 export function useAuth() {
@@ -19,7 +20,7 @@ export function useAuth() {
     getSession();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      (event: AuthChangeEvent, session: Session | null) => {
         setUser(session?.user ?? null);
         setLoading(false);
       }
@@ -28,8 +29,10 @@ export function useAuth() {
     return () => subscription.unsubscribe();
   }, [supabase.auth]);
 
+  const router = useRouter();
   const signOut = async () => {
     await supabase.auth.signOut();
+    router.push('/login');
   };
 
   return { user, loading, signOut };
