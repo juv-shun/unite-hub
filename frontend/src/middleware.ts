@@ -14,10 +14,10 @@ export async function middleware(request: NextRequest) {
     },
   });
 
-  // Example: Redirect to login if not authenticated and accessing a protected route
-  // if (!session && request.nextUrl.pathname.startsWith('/protected-route')) {
-  //   return NextResponse.redirect(new URL('/login', request.url));
-  // }
+  // Redirect to home if not authenticated and not already on the home page
+  if (!session && request.nextUrl.pathname !== '/') {
+    return NextResponse.redirect(new URL('/', request.url));
+  }
 
   return response;
 }
