@@ -14,8 +14,14 @@ export async function middleware(request: NextRequest) {
     },
   });
 
-  // Redirect to home if not authenticated and not already on the home page
-  if (!session && request.nextUrl.pathname !== '/') {
+  // If not authenticated and not trying to access /login, redirect to /login
+  // The `config.matcher` already excludes /auth/*, /api/*, etc.
+  if (!session && request.nextUrl.pathname !== '/login') {
+    return NextResponse.redirect(new URL('/login', request.url));
+  }
+
+  // If authenticated and trying to access /login, redirect to home
+  if (session && request.nextUrl.pathname === '/login') {
     return NextResponse.redirect(new URL('/', request.url));
   }
 
