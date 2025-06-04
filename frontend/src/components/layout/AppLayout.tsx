@@ -4,7 +4,8 @@ import { useAuth } from "@/lib/auth";
 import { UserProfile } from "@/components/auth/UserProfile";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ interface AppLayoutProps {
 
 export default function AppLayout({ children }: AppLayoutProps) {
   const { user, loading } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   if (loading) {
     return (
@@ -37,7 +39,8 @@ export default function AppLayout({ children }: AppLayoutProps) {
                 />
               </Link>
               <div className="flex items-center space-x-6">
-                <nav className="flex items-center space-x-4">
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center space-x-4">
                   <Link href="/" className="text-violet-700 hover:text-violet-900 hover:bg-violet-200 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150">
                     トップ
                   </Link>
@@ -48,10 +51,46 @@ export default function AppLayout({ children }: AppLayoutProps) {
                     スクリムを募集する
                   </Link>
                 </nav>
-                <UserProfile />
+                {/* Mobile Menu Button */}
+                <button
+                  className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-violet-700 hover:text-violet-900 hover:bg-violet-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-violet-500"
+                  aria-label="メニューを開く"
+                  onClick={() => setMenuOpen(!menuOpen)}
+                >
+                  {menuOpen ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </button>
+
+                {/* Desktop User Profile */}
+                <div className="hidden md:block">
+                  <UserProfile />
+                </div>
               </div>
             </div>
           </div>
+          {/* Mobile Navigation Panel */}
+          {menuOpen && (
+            <div className="md:hidden bg-violet-50 border-t border-violet-200">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                {/* Mobile User Profile */}
+                <div className="pb-4 border-b border-violet-200">
+                  <UserProfile />
+                </div>
+                <Link href="/" className="block text-violet-700 hover:text-violet-900 hover:bg-violet-200 px-3 py-2 rounded-md text-base font-medium" onClick={() => setMenuOpen(false)}>
+                  トップ
+                </Link>
+                <Link href="/scrim/find" className="block text-violet-700 hover:text-violet-900 hover:bg-violet-200 px-3 py-2 rounded-md text-base font-medium" onClick={() => setMenuOpen(false)}>
+                  スクリムを探す
+                </Link>
+                <Link href="/scrim/recruit" className="block text-violet-700 hover:text-violet-900 hover:bg-violet-200 px-3 py-2 rounded-md text-base font-medium" onClick={() => setMenuOpen(false)}>
+                  スクリムを募集する
+                </Link>
+              </div>
+            </div>
+          )}
         </header>
       )}
       <main className={`${user ? 'pt-16' : ''} flex flex-col items-center justify-start p-4 min-h-[calc(100vh-4rem)]`}>
