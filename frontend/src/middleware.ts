@@ -38,6 +38,6 @@ export const config = {
      * - api (API routes)
      * - auth (auth routes like login, callback)
      */
-    '/((?!_next/static|_next/image|favicon.ico|api|auth).*)',
+    '/((?!_next/static|_next/image|favicon.ico|api|auth|.+\\.(?:png|jpg|jpeg|gif|svg|webp|ico|css|js|json|xml|txt|webmanifest)).*)',
   ],
 };
