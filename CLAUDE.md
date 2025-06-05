@@ -1,22 +1,23 @@
-# CLAUDE.md
+    # CLAUDE.md
 
 このファイルは、Claude Code (claude.ai/code) がこのリポジトリでコードを操作する際のガイダンスを提供します。
 
 ## プロジェクト概要
 
-UniteHubは、ポケモンユナイトの競技チームがスクリム（練習試合）を組むためのプラットフォームです。現在チームがTwitter/Xでスクリム募集を行っており、練習スケジュールの追跡と整理が困難である課題を解決します。
+UniteHub は、ポケモンユナイトの競技チームがスクリム（練習試合）を組むためのプラットフォームです。現在チームが Twitter/X でスクリム募集を行っており、練習スケジュールの追跡と整理が困難である課題を解決します。
 
 ## アーキテクチャ
 
 - **フロントエンド**: `frontend/` にある Next.js 15、TypeScript、React 19、Tailwind CSS
-- **バックエンド**: `supabase/` にローカル開発設定があるSupabase
+- **バックエンド**: `supabase/` にローカル開発設定がある Supabase
 - **ドキュメント**: `docs/core.yaml` の製品仕様と `docs/user_story_map.yaml` のユーザーストーリーマップ
 
-アプリケーションは認証とデータベース管理にSupabase SSRを使用し、Discord OAuth連携を予定しています。
+アプリケーションは認証とデータベース管理に Supabase SSR を使用し、Discord OAuth 連携を予定しています。
 
 ## 開発コマンド
 
 ### フロントエンド開発（`frontend/` ディレクトリで実行）
+
 ```bash
 # 開発サーバーを起動（http://localhost:3000）
 npm run dev
@@ -31,7 +32,8 @@ npm start
 npm run lint
 ```
 
-### Supabaseローカル開発
+### Supabase ローカル開発
+
 ```bash
 # ローカルSupabaseインスタンス起動
 supabase start
@@ -44,7 +46,8 @@ supabase start
 ## 主要機能
 
 ユーザーストーリーマップに基づく機能：
-- Discord認証
+
+- Discord 認証
 - チーム管理（作成、メンバー管理、オーナー権限移譲）
 - スクリムスケジューリングと募集
 - マッチング申請と承認システム
@@ -53,10 +56,14 @@ supabase start
 ## 開発ガイドライン
 
 ### 技術スタックルール
-- **データベース**: Supabase経由のPostgreSQL
+
+- **データベース**: Supabase 経由の PostgreSQL
 - **認証**: Supabase Auth
-- **CSSフレームワーク**: Tailwind CSS
-- **レンダリング**: 特に指定がない限りCSR（Client Side Rendering）
+- **CSS フレームワーク**: Tailwind CSS
+- **レンダリング**: 特に指定がない限り CSR（Client Side Rendering）
 
 ### 実装要件
-機能を実装する際は、必ず `docs/core.yaml` と `docs/user_story_map.yaml` を参照し、プロダクト全体像を理解した上で設計すること。
+
+- 機能を実装する際は、必ず `docs/core.yaml` と `docs/user_story_map.yaml` を参照し、プロダクト全体像を理解した上で設計すること
+- バックエンドは、Next.js の API Router、もしくは Supabase の Edge Functions で実現する
+- 本アプリケーションは、スマホもしくは PC から利用されることを想定しているため、レスポンシブ対応必須
