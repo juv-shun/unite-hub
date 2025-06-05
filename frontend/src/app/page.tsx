@@ -1,7 +1,6 @@
 "use client";
 
 import { useAuth } from "@/lib/auth";
-import Image from "next/image";
 import AppLayout from "@/components/layout/AppLayout";
 
 export default function Home() {

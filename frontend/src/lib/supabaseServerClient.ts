@@ -15,7 +15,8 @@ export async function createSupabaseServerClient() {
         set(name: string, value: string, options: CookieOptions) {
           try {
             cookieStore.set({ name, value, ...options });
-          } catch (error) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          } catch (_error) {
             // Next.js App Router で Cookie を設定しようとすると、
             // ヘッダーが既に送信された後などの場合にエラーが発生することがあります。
             // 必要に応じてエラーロギングなどを行ってください。
@@ -24,7 +25,8 @@ export async function createSupabaseServerClient() {
         remove(name: string, options: CookieOptions) {
           try {
             cookieStore.delete({ name, ...options });
-          } catch (error) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          } catch (_error) {
             // 同上
           }
         },
