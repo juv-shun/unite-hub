@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { useAuth } from '@/lib/auth';
 
 export function UserProfile() {
@@ -28,10 +29,12 @@ export function UserProfile() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 focus:outline-none"
       >
-        <img
+        <Image
           src={user.user_metadata.avatar_url}
-          alt={user.user_metadata.full_name}
+          alt={user.user_metadata.full_name || 'User avatar'}
           className="w-8 h-8 rounded-full"
+          width={32}
+          height={32}
         />
         <span className="text-sm font-medium">
           {user.user_metadata.full_name}
