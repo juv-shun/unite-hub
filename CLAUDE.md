@@ -10,7 +10,7 @@ UniteHub は、ポケモンユナイトの競技チームがスクリム（練�
 
 - **フロントエンド**: `frontend/` にある Next.js 15、TypeScript、React 19、Tailwind CSS
 - **バックエンド**: `supabase/` にローカル開発設定がある Supabase
-- **ドキュメント**: `docs/core.yaml` の製品仕様と `docs/user_story_map.yaml` のユーザーストーリーマップ
+- **ドキュメント**: `docs/product_core.yaml` の製品仕様と `docs/user_story_map.yaml` のユーザーストーリーマップ
 
 アプリケーションは認証とデータベース管理に Supabase SSR を使用し、Discord OAuth 連携を予定しています。
 
