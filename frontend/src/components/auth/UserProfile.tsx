@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useAuth } from '@/lib/auth';
 
 export function UserProfile() {
@@ -47,6 +48,13 @@ export function UserProfile() {
           >
             マイページ
           </div>
+          <Link
+            href="/team-management"
+            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            onClick={() => setIsOpen(false)}
+          >
+            チーム管理
+          </Link>
           <button
             onClick={() => {
               signOut();
