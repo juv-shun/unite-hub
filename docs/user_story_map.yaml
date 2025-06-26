@@ -2,12 +2,12 @@ user_story_map:
   activities:
     - title: アカウント管理
       narrative_flows:
-        - task: 新規ユーザー登録を行う
-          user_stories: []
         - task: ログインする
-          user_stories: []
+          user_stories:
+            - Discordログインできる
         - task: ログアウトする
-          user_stories: []
+          user_stories:
+            - ログアウトできる
         - task: ユーザー情報を閲覧する
           user_stories: []
         - task: ユーザー情報を編集する
@@ -17,17 +17,29 @@ user_story_map:
     - title: チーム運営
       narrative_flows:
         - task: 新規チームを作成する
-          user_stories: []
+          user_stories:
+            - チーム名を設定できる。
+            - チーム説明文を設定できる。
+            - チームアイコンを設定できる。
+            - チームを保存できる。
         - task: チーム情報を編集する
-          user_stories: []
+          user_stories:
+            - チーム名を編集できる。
+            - チーム説明文を編集できる。
+            - チームアイコンを編集できる。
+            - チームを保存できる。
         - task: チームを解散する
-          user_stories: []
+          user_stories:
+            - チームを解散できる。
         - task: チームにメンバーを招待・追加する
-          user_stories: []
+          user_stories:
+            - チームにメンバーを招待・追加できる。
         - task: チームからメンバーを削除する
-          user_stories: []
+          user_stories:
+            - チームからメンバーを削除できる。
         - task: チームのオーナー権限を移譲する
-          user_stories: []
+          user_stories:
+            - チームのオーナー権限を移譲できる。
     - title: 他チームを知る
       narrative_flows:
         - task: 他チームを検索する
